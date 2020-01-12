@@ -1,2 +1,3 @@
 # Student_Portal
-nothing..just boiler plate django code plus a simple temporaty view in registration app
+nothing .....
+just boiler plate django code plus a simple temporary view in registration app
