@@ -1,17 +1,72 @@
-<!DOCTYPE html>
+{% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>Login</title>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" />
+    <link rel="stylesheet" href="reg.css">
 </head>
 <body>
+    <br>
     <span style="font-family: Montserrat; ">
-        <h1>
-            Login to Access this Service
-        </h1>
-        <h3>
-            ******************************      LOGIN PAGE        ************************************
-        </h3>
+        <div class="container">
+            <div class="card">
+                <article class="card-body mx-auto" style="max-width: 400px;">
+                    <h4 class="card-title mt-3 text-center">Log in to your Profile</h4>
+
+                    <form>
+                        <!-- email -->
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                            </div>
+                            <input name="" class="form-control" placeholder="Email address" type="email">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">@nmims.edu.in</span>
+                            </div>
+                        </div>
+                        <h6>
+                            OR
+                        </h6>
+                        <!--  SAP ID -->
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fas fa-id-badge"></i> </span>
+                            </div>
+                            <input name="" class="form-control" placeholder="SAP ID" type="number" maxlength="11">
+                        </div>
+
+                        <!-- password  -->
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                            </div>
+                            <input class="form-control" placeholder="Create password" type="password">
+                        </div>
+
+                        <!-- submit button -->
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block">Login</button>
+                        </div>
+
+                        <!-- form-group// -->
+                        <p class="text-center">Don't have an account? <a href="http://127.0.0.1:8000/registration/">Register Here</a> </p>
+
+                    </form>
+                </article>
+            </div>
+            <!-- card.// -->
+        </div>
     </span>
 </body>
 </html>
