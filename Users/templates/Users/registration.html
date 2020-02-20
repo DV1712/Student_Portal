@@ -1,60 +1,21 @@
-{% load static %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+{% block content %}
+    <div class="content">
+        <form method="post">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Join Today</legend>
+                {{ form }}}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Sign Up</button>
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Registration</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-
-<body>
-    <span style="font-family: Montserrat; ">
-        <div>
-            <h1>
-            Register to Access the Profiles
-            </h1>
-
-            <p>
-                <label>Usernam</label>
-                <input type="text" name="un" id="ipname" required placeholder="Username">
-            </p>
-
-            <p>
-                <label>Age</label>
-                <input type="number" max="100" min="0" id="ipage" required placeholder="Age">
-            </p>
-
-            <p>
-                <label>Password</label>
-                <input type="password" required placeholder="password" id="ippassword">
-            </p>
-
-            <p>
-                <label>Email</label>
-                <input type="email" required placeholder="Email" id="ipemail">
-            </p>
-
-            <p>
-                <label>Gender</label>
-                <br>
-                <input type="radio" id="mradio" name="gender"><label>Male</label>
-                <br>
-                <input type="radio" id="fradio" name="gender"><label>Female</label>
-            </p>
-
-            <p>
-                <label>Preference</label>
-                <br>
-                <input type="checkbox" id="cbC" name="cb"><label>C</label>
-                <br>
-
-            </p>
-
-            <p>
-                <button type="submit" id="btnSubmit">Submit</button>
-            </p>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Already have an account? <a href="#">Sign In</a>
+            </small>
         </div>
-
-    </span>
-</body>
-</html>
+    </div>
+{% endblock content %}

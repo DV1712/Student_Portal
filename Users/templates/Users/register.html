@@ -8,14 +8,12 @@
 
     <title>Title</title>
     <link rel="shortcut icon" href="{% static 'favicon.ico' %}" />
-<!--    JQUERY-->
-
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-    <link rel="stylesheet" href="reg.css">
+    <link rel="stylesheet" href="{% static 'css/reg.css'%}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-
+    <!--    JQUERY-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -29,6 +27,7 @@
             <div class="card">
                 <article class="card-body mx-auto" style="max-width: 400px;">
                     <h4 class="card-title mt-3 text-center">Create your Profile</h4>
+                    <br>
 
                     <form method="post">
                         <!-- full name -->
@@ -53,7 +52,7 @@
                         <!--  SAP ID -->
                         <div class="form-group input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text"> <i class="fas fa-id-badge"></i> </span>
+                                <span class="input-group-text"> <i class="fas fa-id-badge" style="min-width: 17px"></i> </span>
                             </div>
                             <input name="" class="form-control" placeholder="SAP ID" type="number" maxlength="11">
                         </div>
@@ -64,13 +63,10 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
                             </div>
-                            <select class="custom-select" style="max-width: 120px;">
-                                <option selected="">+91</option>
-                                <option value="1">+96</option>
-                                <option value="2">+98</option>
-                                <option value="3">+99</option>
-                            </select>
-                            <input name="" class="form-control" placeholder="Phone number" type="text">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">+91</span>
+                            </div>
+                            <input name="" class="form-control" placeholder="Phone number" type="text" maxlength="10">
                         </div>
 
                         <!-- program -->
@@ -119,7 +115,7 @@
 
                         <!-- submit button -->
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+                            <button type="submit" class="btn btn-primary btn-block" onclick=""> Create Account  </button>
                         </div>
 
                         <!-- form-group// -->
