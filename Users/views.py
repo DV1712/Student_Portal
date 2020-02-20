@@ -5,7 +5,6 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 
 
-
 def registration_page(request):
     return render(request, 'Users/register.html')
 
