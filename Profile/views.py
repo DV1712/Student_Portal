@@ -1,9 +1,13 @@
 import re
-from django.shortcuts import *
+from django.shortcuts import render,redirect
 
 
 def reg_user(request):
     return render(request, 'Profile/profile.html')
+
+
+def edit_user(request):
+    return render(request, 'Profile/edit_profile.html')
 
     # match_object = re1.match("[a-zA-Z]+")
     #

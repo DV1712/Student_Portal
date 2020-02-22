@@ -1,16 +1,17 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 {% block content %}
     <div class="content">
-        <form method="post">
-            {% csrf_token %}
+        <form method="POST">
+
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Join Today</legend>
-                {{ form }}}
+                {% csrf_token %}
+                {{ form.as_p }}
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Sign Up</button>
-
+                <input type="submit" value="Submit">
             </div>
+
         </form>
         <div class="border-top pt-3">
             <small class="text-muted">

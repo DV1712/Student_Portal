@@ -16,8 +16,9 @@ body{
     text-align: center;
 }
 .profile-img img{
-    width: 70%;
-    height: 100%;
+    max-width: 70%;
+    max-height: 50%;
+
 }
 .profile-img .file {
     position: relative;

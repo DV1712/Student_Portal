@@ -1,8 +1,11 @@
 # import re
 # from datetime import datetime
-from django.contrib.auth import *
-from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import render, redirect
+from django.forms import inlineformset_factory
+from django.http.response import *
+
+from .models import *
 
 
 def registration_page(request):
@@ -19,7 +22,16 @@ def home(request):
 
 def register(request):
     form = UserCreationForm()
-    return render(request, 'Users/registration.html', {'form': form})
+
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+        else:
+            return HttpResponse("Hello, Django!")
+
+    context = {'form': form}
+    return render(request, 'Users/registration.html', context)
 
 
 def reg_user(request):
