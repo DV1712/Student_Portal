@@ -17,7 +17,7 @@ def login_page(request):
 
 
 def home(request):
-    return render(request, 'Users/home.html')
+    return render(request, 'Users/index.html')
 
 
 def register(request):

@@ -21,3 +21,8 @@
     left: 0;
     z-index: 1;
 }
+
+#main_content{
+
+    padding-top: 110px;
+}
