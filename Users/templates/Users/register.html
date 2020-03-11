@@ -8,21 +8,25 @@
 
     <title>Title</title>
 
-    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" />
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}"/>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
     <link rel="stylesheet" href="{% static 'css/reg.css'%}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!--    JQUERY-->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
 
 
-<!--    nav-->
+    <!--    nav-->
     <link rel="stylesheet" href="{% static 'home_fonts/icomoon/style.css'%}">
-
 
 
     <link rel="stylesheet" href="{% static 'home_css/bootstrap.min.css'%}">
@@ -37,55 +41,59 @@
     <link rel="stylesheet" href="{% static 'home_css/aos.css'%}">
     <link rel="stylesheet" href="{% static 'home_css/style.css'%}">
 
-<!--    nav end-->
+    <!--    nav end-->
 
 </head>
 
 <body>
+<header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
 
-    <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
-
-      <div class="container">
+    <div class="container">
         <div class="row align-items-center">
 
-          <div class="col-6 col-md-3 col-xl-4  d-block">
-            <h1 class="mb-0 site-logo"><a href="http://127.0.0.1:8000/" class="text-black h2 mb-0">SPS<span class="text-primary">.</span> </a></h1>
-          </div>
+            <div class="col-6 col-md-3 col-xl-4  d-block">
+                <h1 class="mb-0 site-logo">
+                    <a href="http://127.0.0.1:8000/" class="text-black h2 mb-0">SPS<span class="text-primary">.</span>
+                    </a>
+                </h1>
+            </div>
 
-          <div class="col-12 col-md-9 col-xl-8 main-menu">
-            <nav class="site-navigation position-relative text-right" role="navigation">
+            <div class="col-12 col-md-9 col-xl-8 main-menu">
+                <nav class="site-navigation position-relative text-right" role="navigation">
 
-              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block ml-0 pl-0">
-                <li><a href="#home-section" class="nav-link">Home</a></li>
-                <li><a href="#features-section" class="nav-link">Features</a></li>
-                <li class="has-children">
-                  <a href="#about-section" class="nav-link">About Us</a>
-                  <ul class="dropdown arrow-top">
-                    <li><a href="#our-team-section" class="nav-link">Our Team</a></li>
-                    <li class="has-children">
-                      <a href="#">More Links</a>
-                      <ul class="dropdown">
-                        <li><a href="#">Menu One</a></li>
-                        <li><a href="#">Menu Two</a></li>
-                        <li><a href="#">Menu Three</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li><a href="#contact-section" class="nav-link">Contact</a></li>
-              </ul>
-            </nav>
-          </div>
+                    <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block ml-0 pl-0">
+                        <li><a href="#home-section" class="nav-link">Home</a></li>
+                        <li><a href="#features-section" class="nav-link">Features</a></li>
+                        <li class="has-children">
+                            <a href="#about-section" class="nav-link">About Us</a>
+                            <ul class="dropdown arrow-top">
+                                <li><a href="#our-team-section" class="nav-link">Our Team</a></li>
+                                <li class="has-children">
+                                    <a href="#">More Links</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">Menu One</a></li>
+                                        <li><a href="#">Menu Two</a></li>
+                                        <li><a href="#">Menu Three</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#contact-section" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
 
-          <div class="col-6 col-md-9 d-inline-block d-lg-none ml-md-0" ><a href="#" class="site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a></div>
+            <div class="col-6 col-md-9 d-inline-block d-lg-none ml-md-0"><a href="#"
+                                                                            class="site-menu-toggle js-menu-toggle text-black float-right"><span
+                    class="icon-menu h3"></span></a></div>
 
         </div>
-      </div>
+    </div>
 
-    </header>
+</header>
 
 
-    <span style="font-family: Montserrat; ">
+<span style="font-family: Montserrat; ">
         <div class="container" id="main_content">
             <div class="card">
                 <article class="card-body mx-auto" style="max-width: 400px;">
@@ -178,7 +186,8 @@
 
                         <!-- submit button -->
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-block" onclick=""> Create Account  </button>
+                            <button type="submit" class="btn btn-primary btn-block"
+                                    onclick=""> Create Account  </button>
                         </div>
 
                         <!-- form-group// -->

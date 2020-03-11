@@ -1,3 +1,8 @@
 from django.db import models
-
-# Create your models here.
+# from Users.models import Student
+#
+#
+# class Details(Student):
+#     pass
+#
+#
