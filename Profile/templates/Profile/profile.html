@@ -3,59 +3,68 @@
 <head>
     <meta charset="UTF-8">
 
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'home_fonts/icomoon/style.css'%}">
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'home_css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'home_css/jquery-ui.css'%}">
+
+    <link rel="stylesheet" href="{% static 'home_fonts/flaticon/font/flaticon.css'%}">
+    <link rel="stylesheet" href="{% static 'home_css/style.css'%}">
+
     <link rel="stylesheet" href="{% static 'css/profile.css'%}">
 
-    <title>Profile</title>
+    <title>Student's Profile</title>
 </head>
 
 <body>
-    <div class="container emp-profile">
-        <form method="POST">
+
+
+<header class="site-navbar py-4 site-navbar-target" role="banner">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-6 col-md-3 col-xl-4  d-block">
+                <h1 class="mb-0 site-logo"><a href="/" class="text-black h2 mb-0">SPS<span
+                        class="text-primary">.</span> </a>
+                </h1>
+            </div>
+
+            <div class="col-12 col-md-9 col-xl-8 main-menu">
+                <nav class="site-navigation position-relative text-right" role="navigation">
+
+                    <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block ml-0 pl-0">
+                        <li><a href="/" class="nav-link">Home</a></li>
+                        <li><a href="http://127.0.0.1:8000/profile/browse/" class="nav-link">Browse</a></li>
+                        <li><a href="#contact-section" class="nav-link">Account</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="col-6 col-md-9 d-inline-block d-lg-none ml-md-0">
+                <a href="#" class="site-menu-toggle js-menu-toggle text-black float-right">
+                    <span class="icon-menu h3"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<br>
+<br>
+<div class="site-section bg-image2 overlay" style="background-image:url('{% static 'home_images/hero_1.jpg'%}')">
+    <div class="container card rounded-0"  id="main_container">
+        <form method="POST" id="form_profile_show">
             <div class="row">
                 <div class="col-md-4">
                     <div class="profile-img">
                         <img src="{% static 'images/spoderman.jpeg'%}" alt="spoder" class="profile-img"/>
-                        <div class="file btn btn-lg btn-primary">
-                            Change Photo
-                            <input type="file" name="file"/>
-                        </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="profile-head">
-                                <h5>
-                                    Divyansh Vaidya
-                                </h5>
-                                <h6>
-                                    Web Developer and Designer
-                                </h6>
-                                <p class="proile-rating">RANKINGS : <span>10/10</span></p>
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <button class="profile-edit-btn" type="submit" name="btnAddMore">
-                        <a href="http://127.0.0.1:8000/profile/edit/">Edit Profile</a>
-                    </button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
                     <div class="profile-work">
                         <p>WORK LINK</p>
                         <a href="">Facebook Link</a><br/>
@@ -69,92 +78,117 @@
                         <a href="">PHP, .Net</a><br/>
                     </div>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-6">
+                    <div class="profile-head">
+                        <h5>
+                            Divyansh Vaidya
+                        </h5>
+                        <h6>
+                            Web Developer and Designer
+                        </h6>
+                        <br>
+                        <br>
+                        <br>
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                   aria-controls="home" aria-selected="true">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                                   aria-controls="profile" aria-selected="false">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#home" role="tab"
+                                   aria-controls="home" aria-selected="false">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
                     <div class="tab-content profile-tab" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Name</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>Divyansh Vaidya</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>SAP ID</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>70021017131</p>
-                                        </div>
-                                    </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Name</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>Divyansh Vaidya</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>SAP ID</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>70021017131</p>
+                                </div>
+                            </div>
 
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Email</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>smartdv.ak@gmail.com</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Phone</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>+91 94248 80764</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Profession</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>Web Developer and Designer</p>
-                                        </div>
-                                    </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Email</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>smartdv.ak@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Phone</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>+91 94248 80764</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Profession</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>Web Developer and Designer</p>
+                                </div>
+                            </div>
                         </div>
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Experience</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>Expert</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Hourly Rate</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>10$/hr</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Total Projects</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>230</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>English Level</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>Expert</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Availability</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>6 months</p>
-                                        </div>
-                                    </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Experience</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>Expert</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Hourly Rate</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>10$/hr</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Total Projects</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>230</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>English Level</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>Expert</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Availability</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>6 months</p>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <label>Your Bio</label><br/>
@@ -164,9 +198,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-2">
+                    <a href="http://127.0.0.1:8000/profile/edit/">
+                        <input type="button" value="Edit Profile"  class="btn btn-primary rounded-pill">
+                    </a>
+                </div>
             </div>
         </form>
     </div>
+</div>
+
 
 </body>
 </html>

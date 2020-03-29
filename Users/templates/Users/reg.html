@@ -1,0 +1,191 @@
+{% load static %}
+<html lang="en">
+<head>
+    <title>Student Portfolio System</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'home_fonts/icomoon/style.css'%}">
+
+
+    <link rel="stylesheet" href="{% static 'home_css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'home_css/jquery-ui.css'%}">
+    <link rel="stylesheet" href="{% static 'home_css/owl.carousel.min.css'%}">
+    <link rel="stylesheet" href="{% static 'home_css/owl.theme.default.min.css'%}">
+    <link rel="stylesheet" href="{% static 'home_css/owl.theme.default.min.css'%}">
+
+    <link rel="stylesheet" href="{% static 'home_css/jquery.fancybox.min.css'%}">
+    <link rel="stylesheet" href="{% static 'home_css/bootstrap-datepicker.css'%}">
+    <link rel="stylesheet" href="{% static 'home_fonts/flaticon/font/flaticon.css'%}">
+    <link rel="stylesheet" href="{% static 'home_css/aos.css'%}">
+    <link rel="stylesheet" href="{% static 'home_css/style.css'%}">
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+<!--NAVBAR--------------------------------------------------->
+<header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-6 col-md-3 col-xl-4  d-block">
+                <h1 class="mb-0 site-logo"><a href="http://127.0.0.1:8000/" class="text-black h2 mb-0">SPS<span
+                        class="text-primary">.</span> </a></h1>
+            </div>
+
+            <div class="col-12 col-md-9 col-xl-8 main-menu">
+                <nav class="site-navigation position-relative text-right" role="navigation">
+
+                    <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block ml-0 pl-0">
+                        <li><a href="#home-section" class="nav-link">Home</a></li>
+                        <li><a href="#features-section" class="nav-link">Features</a></li>
+                        <li class="has-children">
+                            <a href="#about-section" class="nav-link">About Us</a>
+                            <ul class="dropdown arrow-top">
+                                <li><a href="#our-team-section" class="nav-link">Our Team</a></li>
+                                <li class="has-children">
+                                    <a href="#">More Links</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">Menu One</a></li>
+                                        <li><a href="#">Menu Two</a></li>
+                                        <li><a href="#">Menu Three</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#contact-section" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+
+            <div class="col-6 col-md-9 d-inline-block d-lg-none ml-md-0">
+                <a href="#" class="site-menu-toggle js-menu-toggle text-black float-right">
+                    <span class="icon-menu h3"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+<!--NAVBAR  ENDS--------------------------------------------->
+
+
+<div class="site-section bg-image2 overlay" id="contact-section"
+     style=" background-image: url('{% static 'home_images/hero_1.jpg'%}')">
+    <div class="container">
+        <br>
+        <br>
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <h2 class="section-title mb-3 text-black">Sign Up</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-7 mb-5">
+
+                <!--REGISTRATION FORM STARTS--------------------------------->
+                <form action="" class="p-5 bg-white" method="POST">
+                    {% csrf_token %}
+                    <!-- <h2 class="h4 text-black mb-5">Sign Up</h2> -->
+                    <div class="row form-group">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label class="text-black" for="fname">First Name </label>
+                            <input type="text" name="fname" class="form-control rounded-0" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="text-black" for="lname">Last Name</label>
+                            <input type="text" name="lname" class="form-control rounded-0" required>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+
+                        <div class="col-md-12">
+                            <label class="text-black" for="email">Email</label>
+                            <input type="email" name="email" class="form-control rounded-0" required>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <label class="text-black">SAP ID</label>
+                            <input type="number" name="sap_id" class="form-control rounded-0">
+                        </div>
+                    </div>
+
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <label class="text-black">Program</label>
+                            <select class="form-control rounded-0" name="program">
+                                <option selected="">Select Program</option>
+                                <option>B.TECH</option>
+                                <option>MCA</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <label class="text-black">Stream</label>
+                            <select class="form-control rounded-0 " name="stream">
+                                <option>Select Stream</option>
+                                <option>CE</option>
+                                <option>Mechatronics</option>
+                                <option>EXTC</option>
+                                <option>IT</option>
+                                <option>Mechanical</option>
+                                <option>Civil</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <label class="text-black">Password</label>
+                            <input type="password" name="pass" class="form-control rounded-0">
+                        </div>
+                    </div>
+
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <label class="text-black">Repeat Password</label>
+                            <input type="password" name="repeatpass" class="form-control rounded-0">
+                        </div>
+                    </div>
+
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <input type="submit" value="Create Account" class="btn btn-primary mr-2 mb-2">
+                            <a href="http://127.0.0.1:8000/registration"><p>Log In</p></a>
+                        </div>
+                    </div>
+                    <p>{{ error }}</p>
+                </form>
+                <!--REGISTRATION FORM STARTS--------------------------------->
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+</body>
+
+</html>

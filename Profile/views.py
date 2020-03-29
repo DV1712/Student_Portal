@@ -1,5 +1,5 @@
 import re
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 
 
 def reg_user(request):
@@ -8,6 +8,10 @@ def reg_user(request):
 
 def edit_user(request):
     return render(request, 'Profile/edit_profile.html')
+
+
+def browse_page(request):
+    return render(request, 'Profile/browse.html')
 
     # match_object = re1.match("[a-zA-Z]+")
     #
