@@ -1,8 +1,9 @@
 from django.db import models
-# from Users.models import Student
+from django.contrib.auth.models import User
+
 #
 #
-# class Details(Student):
+# class Details(models.Model):
 #     pass
 #
 #

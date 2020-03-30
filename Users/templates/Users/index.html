@@ -43,7 +43,7 @@
             <div class="row align-items-center">
 
                 <div class="col-6 col-md-3 col-xl-4  d-block">
-                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">SPS<span
+                    <h1 class="mb-0 site-logo"><a href="/" class="text-black h2 mb-0">SPS<span
                             class="text-primary">.</span> </a></h1>
                 </div>
 
@@ -55,6 +55,9 @@
                             <li><a href="#features-section" class="nav-link">Features</a></li>
                             <li><a href="#our-team-section" class="nav-link">Our Team</a></li>
                             <li><a href="#contact-section" class="nav-link">Contact</a></li>
+                            {% if user.is_authenticated %}
+                            <li><a href="logout" class="nav-link">Logout</a></li>
+                            {% endif %}
                         </ul>
                     </nav>
                 </div>
@@ -78,14 +81,20 @@
 
                     <div class="row mb-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="col-lg-6 mr-auto">
+                            <h1>Hello,<span class="text-primary"> {{request.user.first_name}}</span></h1>
                             <h1>Welcome to SPS<span class="text-primary">.</span></h1>
-                            <p class="mb-5">You are about to log in to the world of Useless Students who are not going
-                                to get Placed anyways...</p>
+                            <h5 class="mb-5">You are about to enter into the Placement Portal of MPSTME</h5>
+                            {% if user.is_authenticated%}
+                            <div>
+                                <a href="http://127.0.0.1:8000/profile/0" class="btn btn-primary mr-2 mb-2">Show my Profile</a>
+                            </div>
+                            {% else %}
                             <div>
                                 <a href="http://127.0.0.1:8000/login/" class="btn btn-primary mr-2 mb-2">Log In</a>
                             </div>
                             <p> New to SPS? <a href="http://127.0.0.1:8000/registration/"
-                                               class="text-primary mr-2 mb-2"> &nbsp; Sign Up</a></p>
+                                               class="text-primary mr-2 mb-2"> &nbsp;Sign Up</a></p>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

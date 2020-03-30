@@ -10,7 +10,7 @@ favicon_view = RedirectView.as_view(url='/static/favicon.ico', permanent=True)
 urlpatterns = [
     path("registration/", views.registration_page, name="Reg Page"),
     path("login/", views.login_page, name="Login Page"),
+    path("logout", views.logout, name="logout"),
     # -----v----- django default reg page -----v-----
-    path('register/', views.register, name="Reg Page"),
     path("", views.home, name="Home Page"),
 ]

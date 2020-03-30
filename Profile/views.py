@@ -1,23 +1,43 @@
-import re
 from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+from django.contrib import auth
+from django.http.response import *
+from Users.models import UserInfo
 
 
-def reg_user(request):
-    return render(request, 'Profile/profile.html')
+@login_required()
+def show_user(request, sap):
+    if sap == "0":
+        u = '/profile/' + request.user.username
+        return redirect(u)
+    else:
+        if (request.user.username == sap) or request.user.is_staff:
+            return render(request, 'Profile/profile.html')
+        else:
+            return HttpResponse('You are not authorized to view this profile!')
 
 
+@login_required()
 def edit_user(request):
-    return render(request, 'Profile/edit_profile.html')
+    if request.method == 'POST':
+        user = request.user
+        user.email = request.POST['email']
+        UserInfo.objects.filter(user_id=request.user.id).update(phone_num=request.POST['phone'])
+        user.save()
+        return render(request, 'Profile/edit_profile.html')
+    else:
+        return render(request, 'Profile/edit_profile.html')
 
 
+@login_required()
 def browse_page(request):
-    return render(request, 'Profile/browse.html')
+    if (request.user.is_staff):
+        return render(request, 'Profile/browse.html')
+    else:
+        return HttpResponse('You are not authorized to view this profile!')
 
-    # match_object = re1.match("[a-zA-Z]+")
-    #
-    # if match_object:
-    #     clean_name = match_object.group(0)
-    # else:
-    #     clean_name = "Friend"
-    #
-    # content = "Hello there, " + clean_name
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')

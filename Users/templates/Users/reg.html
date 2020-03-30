@@ -95,7 +95,6 @@
                 <!--REGISTRATION FORM STARTS--------------------------------->
                 <form action="" class="p-5 bg-white" method="POST">
                     {% csrf_token %}
-                    <!-- <h2 class="h4 text-black mb-5">Sign Up</h2> -->
                     <div class="row form-group">
                         <div class="col-md-6 mb-3 mb-md-0">
                             <label class="text-black" for="fname">First Name </label>
@@ -138,8 +137,8 @@
                         <div class="col-md-12">
                             <label class="text-black">Stream</label>
                             <select class="form-control rounded-0 " name="stream">
-                                <option>Select Stream</option>
-                                <option>CE</option>
+                                <option selected="">Select Stream</option>
+                                <option>Computer Engineering</option>
                                 <option>Mechatronics</option>
                                 <option>EXTC</option>
                                 <option>IT</option>
@@ -169,7 +168,7 @@
                     <div class="row form-group">
                         <div class="col-md-12">
                             <input type="submit" value="Create Account" class="btn btn-primary mr-2 mb-2">
-                            <a href="http://127.0.0.1:8000/registration"><p>Log In</p></a>
+                            <a href="http://127.0.0.1:8000/login"><p>Log In</p></a>
                         </div>
                     </div>
                     <p>{{ error }}</p>

@@ -11,7 +11,6 @@ from .models import UserInfo
 
 def registration_page(request):
     if request.method == 'POST':
-
         if request.POST['pass'] == request.POST['repeatpass']:
             try:
                 user = User.objects.get(username=request.POST['sap_id'])
@@ -25,75 +24,33 @@ def registration_page(request):
                 program = request.POST['program']
                 userinfo = UserInfo(stream=stream, program=program, user=user)
                 userinfo.save()
-                # auth.login(request,user)
-                return render(request, 'Users/log.html')
+                auth.login(request, user)
+                return render(request, 'Users/index.html')
         else:
             return render(request, 'Users/reg.html', {'error': "Passwords do not match"})
     else:
         return render(request, 'Users/reg.html')
 
-    # userForm = Abs()
-    # if request.method = 'POST':
-    #
-    #     if userForm.is_valid():
-    #         email = userForm.cleaned_data['email']
-    #         username = userForm.cleaned_data['username']
-    #         password = userForm.cleaned_data['password']
-    #         dob = userForm.cleaned_data['date_of_birth']
-    #         department = userForm.cleaned_data['department']
-    #
-    #         try:
-    #             with transaction.atomic():
-    #                 # All the database operations within this block are part of the transaction
-    #                 user = User.objects.create_user(email=email, username=username, password=password)
-    #                 profile = Profile.objects.create(user=user, date_of_birth=dob, department=department)
-    #         except DatabaseError:
-    #             # The transaction has failed. Handle appropriately
-    #             pass
-    # else:
-    #     return render(request, 'Users/reg.html')
-
 
 def login_page(request):
-    return render(request, 'Users/log.html')
+    if request.method == "POST":
+        user = auth.authenticate(username=request.POST['sap_id'], password=request.POST['pass'])
+        if user is None:
+            return render(request, 'Users/log.html', {'error': "SAP ID or Password incorrect!"})
+        else:
+            auth.login(request, user)
+            return redirect('/')
+    else:
+        return render(request, 'Users/log.html')
 
 
 def home(request):
     return render(request, 'Users/index.html')
 
 
-# default django registration form template
-def register(request):
-    pass
-    # form = UserCreationForm()
-    #
-    # if request.method == 'POST':
-    #     form = UserCreationForm(request.POST)
-    #     if form.is_valid():
-    #         form.save()
-    #     else:
-    #         return HttpResponse("Hello, Django!")
-    #
-    # context = {'form': form}
-    # return render(request, 'Users/registration.html', context)
-
-
-def reg_user(request):
-    return render(request, 'Users/base.html')
-
-# if request.method == 'POST':
-#     form = UserCreationForm(request.POST)
-#     if form.is_valid():
-#         form.save()
-#         username = form.cleaned_data.get('username')
-#         raw_password = form.cleaned_data.get('password1')
-#         user = authenticate(username=username, password=raw_password)
-#         login(request, user)
-#         return redirect('home')
-# else:
-#     form = UserCreationForm()
-# return render(request, 'signup.html', {'form': form})
-
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
 
 #               AISE HI KCH BHI TRY KRA THA
 # def hello_there(request):
