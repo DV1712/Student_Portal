@@ -41,7 +41,10 @@
                     <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block ml-0 pl-0">
                         <li><a href="/" class="nav-link">Home</a></li>
                         <li><a href="http://127.0.0.1:8000/profile/browse/" class="nav-link">Browse</a></li>
-                        <li><a href="#contact-section" class="nav-link">Account</a></li>
+                        <li><a href="http://127.0.0.1:8000/profile/0" class="nav-link active">Profile</a></li>
+                        {% if user.is_authenticated %}
+                        <li><a href="/logout" class="nav-link">Logout</a></li>
+                        {% endif %}
                     </ul>
                 </nav>
             </div>
@@ -60,6 +63,7 @@
 <div class="site-section bg-image2 overlay" style="background-image:url('{% static 'home_images/hero_1.jpg'%}')">
     <div class="container card rounded-0" id="main_container">
         <form method="POST" id="form_profile_show">
+            {%for d in data%}
             <div class="row">
                 <div class="col-md-4">
                     <div class="profile-img">
@@ -80,12 +84,16 @@
                 </div>
                 <div class="col-md-6">
                     <div class="profile-head">
-                        <h5>
+                        <h1>
                             {{request.user.first_name}} {{request.user.last_name}}
+                        </h1>
+                        <h5>
+                            {{d.program}}
                         </h5>
-                        <h6>
-                            Web Developer and Designer
-                        </h6>
+                        <h5>
+                            {{d.stream}}
+                        </h5>
+
                         <br>
                         <br>
                         <br>
@@ -107,52 +115,91 @@
                     <div class="tab-content profile-tab" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <label>Name</label>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-8">
                                     <p>{{request.user.first_name}} {{request.user.last_name}}</p>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <label>SAP ID</label>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-8">
                                     <p>{{request.user.username}}</p>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <label>Program</label>
                                 </div>
-                                <div class="col-md-6">
-                                    <p>+91 94248 80764</p>
+                                <div class="col-md-8">
+                                    <p>{{d.program}}</p>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <label>Stream</label>
                                 </div>
-                                <div class="col-md-6">
-                                    <p>+91 94248 80764</p>
+                                <div class="col-md-8">
+                                    <p>{{d.stream}}</p>
                                 </div>
                             </div>
-
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <label>Email</label>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-8">
                                     <p>{{request.user.email}}</p>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <label>Phone</label>
                                 </div>
-                                <div class="col-md-6">
-                                    <p>+91 94248 80764</p>
+                                <div class="col-md-8">
+                                    <p>{{d.phone_num}}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label>Languages</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <p>{{d.languages}}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label>Projects</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <p>{{d.projects}}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label>CGPA</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <p>{{d.cgpa}}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label>Experience</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <p>{{d.experience}}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label>Core Competencies</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <p>{{d.core}}</p>
                                 </div>
                             </div>
                         </div>
@@ -216,7 +263,7 @@
                     </a>
                 </div>
             </div>
-
+            {%endfor%}
         </form>
     </div>
 </div>

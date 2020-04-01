@@ -41,7 +41,7 @@
                     <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block ml-0 pl-0">
                         <li><a href="/" class="nav-link">Home</a></li>
                         <li><a href="http://127.0.0.1:8000/profile/browse/" class="nav-link">Browse</a></li>
-                        <li><a href="#contact-section" class="nav-link">Account</a></li>
+                        <li><a href="http://127.0.0.1:8000/profile/0" class="nav-link">Profile</a></li>
                         {% if user.is_authenticated %}
                         <li><a href="/logout" class="nav-link">Logout</a></li>
                         {% endif %}
@@ -60,6 +60,8 @@
 
 <br>
 <br>
+<br>
+
 <div class="site-section bg-image2 overlay" style="background-image:url('{% static 'home_images/hero_1.jpg'%}')">
     <div class="container card rounded-0" id="main_container2">
         <!-- TOP ROW..... user image and name and sps logo in this row aligned       -->
@@ -86,19 +88,12 @@
 
 
             <!--   RIGHT PANEL         -->
-            <div class="col-md-9">
+            <div class="col-md-7">
                 <!--  STUDENT NAME          -->
                 <div class="row">
-                    <div class="col-md-7">
+                    <div class="col-md-6">
                         <br>
                         <h1>{{request.user.first_name}} {{request.user.last_name}}</h1>
-                    </div>
-
-                    <!--  SPS LOGO BESIDES STUDENT NAME          -->
-                    <div class="col-md-2"><a href="/" class="pull-right">
-                        <img title="profile image" class="img-circle img-responsive"
-                             src="{% static 'home_images/1.png' %}"
-                             id="logo_edit"></a>
                     </div>
                 </div>
 
@@ -106,54 +101,101 @@
                 <br>
 
                 <!--form--------------------------------------------------------------------------------->
-                <div class="col-md-9">
-                    <ul class="nav nav-tabs">
-                        <li><a data-toggle="tab" href="#home" id="tab1" class="navbar-btn active">General Academic</a>
-                        </li>
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="nav nav-tabs">
+                            <li><a data-toggle="tab" href="#home" id="tab1" class="nav-link active">General</a>
+                            </li>
+                            <li><a data-toggle="tab" href="#academics" id="tab2" class="nav-link">Academics</a>
+                            </li>
 
-                    </ul>
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="home">
-                            <hr>
-                            <form class="form" method="POST" id="registrationForm">
-                                {% csrf_token %}
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <label class="text-black"><h4>Phone</h4></label>
-                                        <input type="number" class="form-control rounded-0" name="phone" name="phone"
-                                               id="phone" required>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="home">
+                                <hr>
+                                <form class="form" method="POST" id="registrationForm">
+                                    {% csrf_token %}
+                                    {%for d in data%}
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label class="text-black"><h4>Phone</h4></label>
+                                            <input type="number" class="form-control rounded-0" name="phone"
+                                                   name="phone"
+                                                   id="phone" required value={{d.phone_num}}>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <label for="email" class="text-black"><h4>Email</h4></label>
-                                        <input type="email" class="form-control rounded-0" name="email" id="email"
-                                               required>
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label class="text-black"><h4>Email</h4></label>
+                                            <input type="email" class="form-control rounded-0" name="email" id="email"
+                                                   required value={{request.user.email}}>
+                                        </div>
                                     </div>
-                                </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label class="text-black"><h4>Languages</h4></label>
+                                            <input type="text" class="form-control rounded-0" name="languages"
+                                                   required value={{d.languages}}>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label class="text-black"><h4>Projects</h4></label>
+                                            <input type="text" class="form-control rounded-0" name="projects"
+                                                   required value={{d.projects}}>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label class="text-black"><h4>CGPA</h4></label>
+                                            <input type="number" step="0.01" min="0" max="4" class="form-control rounded-0" name="cgpa"
+                                                   required value={{d.cgpa}}>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label class="text-black"><h4>Experience</h4></label>
+                                            <textarea type="text" class="form-control rounded-0" name="experience"
+                                                      required id="experience">{{d.experience}}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label class="text-black"><h4>Core Competencies</h4></label>
+                                            <textarea type="text" class="form-control rounded-0" name="core"
+                                                      required id="core">{{d.core}}</textarea>
+                                        </div>
+                                    </div>
 
 
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <br>
-                                        <a href="http://127.0.0.1:8000/profile/edit/">
-                                            <input type="submit" value="Save Changes"
-                                                   class="btn btn-primary rounded-pill">
-                                        </a>
-                                        <a href="http://127.0.0.1:8000/profile/show/">
-                                            <input type="button" value="Discard Changes"
-                                                   class="btn btn-primary rounded-pill" id="discard_btn">
-                                        </a>
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <br>
+                                            <a href="http://127.0.0.1:8000/profile/edit/">
+                                                <input type="submit" value="Save Changes"
+                                                       class="btn btn-primary rounded-pill">
+                                            </a>
+                                            <a href="http://127.0.0.1:8000/profile/0">
+                                                <input type="button" value="Discard Changes"
+                                                       class="btn btn-primary rounded-pill" id="discard_btn">
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
+                                    {%endfor%}
+                                </form>
+                                <hr>
+                            </div>
                             </form>
-                            <hr>
-                        </div>
-                        </form>
-                    </div><!--/tab-pane-->
-                </div><!--/tab-content-->
-            </div>
+                        </div><!--/tab-pane-->
+                    </div><!--/tab-content-->
+                </div>
 
+                <!--  SPS LOGO BESIDES STUDENT NAME          -->
+            </div>
+            <div class="col-md-2">
+                <br>
+                <a href="http://127.0.0.1:8000/profile/0">Go back to profile</a>
+            </div>
         </div>
 
 

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'home_fonts/icomoon/style.css'%}">
 
     <link rel="stylesheet" href="{% static 'home_css/bootstrap.min.css'%}">
-    <link rel="stylesheet" href="{% static 'home_css/jquery-ui.css'%}">s
+    <link rel="stylesheet" href="{% static 'home_css/jquery-ui.css'%}">
 
     <link rel="stylesheet" href="{% static 'home_fonts/flaticon/font/flaticon.css'%}">
     <link rel="stylesheet" href="{% static 'home_css/style.css'%}">
@@ -38,7 +38,8 @@
                         <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block ml-0 pl-0">
                             <li><a href="/" class="nav-link">Home</a></li>
                             <li><a href="" class="nav-link active">Browse</a></li>
-                            <li><a href="#contact-section" class="nav-link">Account</a></li>
+                            <li><a href="/profile/0" class="nav-link">Profile</a></li>
+                            <li><a href="/logout" class="nav-link">Logout</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -51,93 +52,100 @@
             </div>
         </div>
     </header>
+
+
     <br>
     <br>
     <br>
 
     <!-------------------------   MAIN CONTENT  ----------------------------------------------------------------->
-    <section id="main_section" >
+    <section id="main_section" class="site-section bg-image2 overlay"
+             style="background-image:url('{% static 'home_images/hero_1.jpg'%}');">
         <div id="filter_and_profiles" class="container-fluid row">
             <!--   FILTER PANEL------------------------------------------------------------------------------------->
             <div class="col-md" id="fiter_panel">
                 <br>
-                <br>
                 <div class="col">
                     <div class="card">
-                        <article class="card-group-item">
-                            <header class="card-header">
-                                <h6 class="title">Program</h6>
-                            </header>
-                            <div class="filter-content">
-                                <div class="card-body">
-                                    <form>
+                        <form method="POST">
+                            <article class="card-group-item">
+                                <header class="card-header">
+                                    <h6 class="title">Program</h6>
+                                </header>
+                                <div class="filter-content">
+                                    <div class="card-body">
                                         <label class="form-check">
                                             <input class="form-check-input" type="checkbox" value="">
                                             <span class="form-check-label">
                                             B.TECH
                                           </span>
                                         </label>
-                                        <!-- form-check.// -->
-                                    </form>
-                                    <form>
                                         <label class="form-check">
                                             <input class="form-check-input" type="checkbox" value="">
                                             <span class="form-check-label">
                                           MCA
                                         </span>
                                         </label>
-                                        <!-- form-check.// -->
-                                    </form>
+                                    </div>
+                                    <!-- card-body.// -->
                                 </div>
-                                <!-- card-body.// -->
-                            </div>
-                        </article>
-                        <!-- card-group-item.// -->
+                            </article>
+                            <!-- card-group-item.// -->
 
-                        <article class="card-group-item">
-                            <header class="card-header">
-                                <h6 class="title">Stream</h6>
-                            </header>
-                            <div class="filter-content">
-                                <div class="card-body">
-                                    <label class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadio" value="">
-                                        <span class="form-check-label">Compuer Engineering</span>
-                                    </label>
-                                    <label class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadio" value="">
-                                        <span class="form-check-label">Mechatronics</span>
-                                    </label>
-                                    <label class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadio" value="">
-                                        <span class="form-check-label">EXTC</span>
-                                    </label>
-                                    <label class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadio" value="">
-                                        <span class="form-check-label">Civil</span>
-                                    </label>
-                                    <label class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="exampleRadio" value="">
-                                        <span class="form-check-label">Mechanical</span>
-                                    </label>
+                            <article class="card-group-item">
+                                <header class="card-header">
+                                    <h6 class="title">Stream</h6>
+                                </header>
+                                <div class="filter-content">
+                                    <div class="card-body">
+                                        <label class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="exampleRadio"
+                                                   value="">
+                                            <span class="form-check-label">Compuer Engineering</span>
+                                        </label>
+                                        <label class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="exampleRadio"
+                                                   value="">
+                                            <span class="form-check-label">Mechatronics</span>
+                                        </label>
+                                        <label class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="exampleRadio"
+                                                   value="">
+                                            <span class="form-check-label">EXTC</span>
+                                        </label>
+                                        <label class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="exampleRadio"
+                                                   value="">
+                                            <span class="form-check-label">Civil</span>
+                                        </label>
+                                        <label class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="exampleRadio"
+                                                   value="">
+                                            <span class="form-check-label">Mechanical</span>
+                                        </label>
+                                    </div>
+                                    <!-- card-body.// -->
                                 </div>
-                                <!-- card-body.// -->
+                            </article>
+                            <!-- card-group-item.// -->
+                            <div class="center-block" id="apply_div">
+                                <input type="button" class="btn btn-outline-secondary" value="Apply" id="apply_btn">
                             </div>
-                        </article>
-                        <!-- card-group-item.// -->
+
+                        </form>
                     </div>
                     <!-- card.// -->
+
                 </div>
-                <!-- col.// -->
             </div>
             <!--   FILTER PANEL ENDS          ----------------------------------------------------------------------->
 
             <!-- PROFILES-------------------------------------------------------------------------------------------->
             <aside class="col-md-9" id="profiles_section">
                 <br>
-                <br>
-                <div class="album py-3 bg-light">
+                <div class="album py-3 bg-light rounded">
                     <div class="container row">
+                        {% for info in object_info %}
                         <div class=" col-md-3 ">
                             <div class="card mb-4 shadow-sm ">
                                 <img class="card-img-top "
@@ -146,62 +154,17 @@
                                      src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_170eddc276a%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_170eddc276a%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.70000076293945%22%20y%3D%22120.18000011444092%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E "
                                      data-holder-rendered="true ">
                                 <div class="card-body ">
-                                    <p class="card-text ">This is a wider card with supporting text below as a natural
-                                        lead-in to additional content. This content is a little bit longer.</p>
+                                    <h5>{{info.user.first_name}} {{info.user.last_name}}</h5>
+                                    <h6>{{info.program}}</h6>
+                                    <h6>{{info.stream}}</h6>
                                     <div class="d-flex justify-content-between align-items-center ">
-                                        <button type="button " class="btn btn-block btn-outline-primary ">View</button>
+                                        <button type="button " href="" class="btn btn-block btn-outline-primary ">View
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 ">
-                            <div class="card mb-4 shadow-sm ">
-                                <img class="card-img-top "
-                                     data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail "
-                                     alt="Thumbnail [100%x225] " style="height: 225px; width: 100%; display: block; "
-                                     src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_170eddc276b%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_170eddc276b%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.70000076293945%22%20y%3D%22120.18000011444092%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E "
-                                     data-holder-rendered="true ">
-                                <div class="card-body ">
-                                    <p class="card-text ">This is a wider card with supporting text below as a natural
-                                        lead-in to additional content. This content is a little bit longer.</p>
-                                    <div class="d-flex justify-content-between align-items-center ">
-                                        <button type="button " class="btn btn-block btn-outline-primary ">View</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 ">
-                            <div class="card md-4 ">
-                                <img class="card-img-top "
-                                     data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail "
-                                     alt="Thumbnail [100%x225] " style="height: 225px; width: 100%; display: block; "
-                                     src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_170eddc276c%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_170eddc276c%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.70000076293945%22%20y%3D%22120.18000011444092%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E "
-                                     data-holder-rendered="true ">
-                                <div class="card-body ">
-                                    <p class="card-text ">This is a wider card with supporting text below as a natural
-                                        lead-in to additional content. This content is a little bit longer.</p>
-                                    <div class="d-flex justify-content-between align-items-center ">
-                                        <button type="button " class="btn btn-block btn-outline-primary ">View</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 ">
-                            <div class="card md-4 ">
-                                <img class="card-img-top "
-                                     data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail "
-                                     alt="Thumbnail [100%x225] " style="height: 225px; width: 100%; display: block; "
-                                     src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_170eddc276c%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_170eddc276c%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.70000076293945%22%20y%3D%22120.18000011444092%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E "
-                                     data-holder-rendered="true ">
-                                <div class="card-body ">
-                                    <p class="card-text ">This is a wider card with supporting text below as a natural
-                                        lead-in to additional content. This content is a little bit longer.</p>
-                                    <div class="d-flex justify-content-between align-items-center ">
-                                        <button type="button " class="btn btn-block btn-outline-primary ">View</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </aside>

@@ -1,0 +1,153 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Creative One Page Parallax Template">
+    <meta name="keywords"
+          content="Creative, Onepage, Parallax, HTML5, Bootstrap, Popular, custom, personal, portfolio"/>
+    <meta name="author" content="">
+    <title>{{request.user.first_name}}'s Attendance Report</title>
+    <link href="{% static 'attendance/css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'attendance/css/prettyPhoto.css'%}" rel="stylesheet">
+    <link href="{% static 'attendance/css/font-awesome.min.css'%}" rel="stylesheet">
+    <link href="{% static 'attendance/css/uikit.css'%}" rel="stylesheet">
+    <link href="{% static 'attendance/css/main.css'%}" rel="stylesheet">
+    <link href="{% static 'attendance/css/responsive.css'%}" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="{% static 'attendance/js/html5shiv.js'%}"></script>
+    <script src="{% static 'attendance/js/respond.min.js'%}"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="{% static 'attendance/images/ico/favicon.ico'%}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+          href="{% static 'attendance/images/ico/apple-touch-icon-144-precomposed.png'%}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+          href="{% static 'attendance/images/ico/apple-touch-icon-114-precomposed.png'%}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"
+          href="{% static 'attendance/images/ico/apple-touch-icon-72-precomposed.png'%}">
+    <link rel="apple-touch-icon-precomposed"
+          href="{% static 'attendance/images/ico/apple-touch-icon-57-precomposed.png'%}">
+</head>
+<!--head-->
+
+
+
+<body>
+<section id="about-us" class="parallax-section" class="site-section bg-image2 overlay" style="background-image:url('{% static 'home_images/hero_1.jpg'%}')"> <!-- About Us -->
+    <div class="container">
+        <div class="text-center" >
+            <div class="col-sm-8 col-sm-offset-2">
+                <h2 class="title-one" style="color:black;">Records</h2>
+                <h5 class="title-content" style="color:black; font-weight: bold">Attendance and Academic Records Display</h5>
+            </div>
+        </div>
+        <div class="about-us">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3 style="color:black; font-weight: bold; font-size: 20px;">Attendance Record</h3>
+                    <ul class="nav nav-tabs">
+                        <li><a href="#python" data-toggle="tab" style="color:black;"><i class="fa fa-bolt"></i>Python</a></li>
+                        <li><a href="#fwt" data-toggle="tab" style="color:black;"><i class="fa fa-html5"></i>FWT</a></li>
+                        <li><a href="#oose" data-toggle="tab" style="color:black;"><i class="fa fa-check-square"></i> OOSE</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="python">
+                            <div class="media">
+                                <div class="media-body">
+                                    <div class="skillbar clearfix " data-percent="95%">
+                                        <div class="skillbar-title"><span>Python Attendance</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">95%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade in active" id="fwt">
+                            <div class="media">
+                                <div class="media-body">
+                                    <div class="skillbar clearfix " data-percent="90%">
+                                        <div class="skillbar-title"><span>FWT Attendance</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">90%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade in active" id="oose">
+                            <div class="media">
+                                <div class="media-body">
+                                    <div class="skillbar clearfix " data-percent="85%">
+                                        <div class="skillbar-title"><span>OOSE Attendance</span></div>
+                                        <div class="skillbar-bar"></div>
+                                        <div class="skill-bar-percent">85%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <h3 style="color:black; font-weight: bold; font-size: 20px;">Academic Record</h3>
+                    <div class="skill-bar">
+                        <div class="skillbar clearfix " data-percent="90%">
+                            <div class="skillbar-title"><span>Python</span></div>
+                            <div class="skillbar-bar"></div>
+                            <div class="skill-bar-percent">90%</div>
+                        </div> <!-- End Skill Bar -->
+
+                        <div class="skillbar clearfix" data-percent="85%">
+                            <div class="skillbar-title"><span>OOSE</span></div>
+                            <div class="skillbar-bar"></div>
+                            <div class="skill-bar-percent">85%</div>
+                        </div> <!-- End Skill Bar -->
+
+                        <div class="skillbar clearfix " data-percent="80%">
+                            <div class="skillbar-title"><span>FWT</span></div>
+                            <div class="skillbar-bar"></div>
+                            <div class="skill-bar-percent">80%</div>
+                        </div> <!-- End Skill Bar -->
+
+                        <div class="skillbar clearfix " data-percent="60%">
+                            <div class="skillbar-title"><span>IP</span></div>
+                            <div class="skillbar-bar"></div>
+                            <div class="skill-bar-percent">60%</div>
+                        </div> <!-- End Skill Bar -->
+
+                        <div class="skillbar clearfix " data-percent="75%">
+                            <div class="skillbar-title"><span>SP</span></div>
+                            <div class="skillbar-bar"></div>
+                            <div class="skill-bar-percent">75%</div>
+                        </div> <!-- End Skill Bar -->
+
+                        <div class="skillbar clearfix " data-percent="85%">
+                            <div class="skillbar-title"><span>OR</span></div>
+                            <div class="skillbar-bar"></div>
+                            <div class="skill-bar-percent">85%</div>
+                        </div> <!-- End Skill Bar -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> <!--End #about us-->
+
+
+<!--/#Scripts-->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript" src="js/gmaps.js"></script>
+<script type="text/javascript" src="js/smoothscroll.js"></script>
+<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="js/jquery.parallax.js"></script>
+<script type="text/javascript" src="js/jquery.flexslider.js"></script>
+<script type="text/javascript" src="js/jquery.isotope.min.js"></script>
+<script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="js/canvas.js"></script>
+<script type="text/javascript" src="js/jquery.scrollToTop.min.js"></script>
+<script type="text/javascript" src="js/jquery.appear.js"></script>
+<script type="text/javascript" src="js/uikit.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
