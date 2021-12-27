@@ -1,3 +1,3 @@
 # Student_Portal
-nothing .....
-just boiler plate django code plus a simple temporary view in registration app
+Student Portfolio System
+Students in an institution can create and update their portfolio in the portal which can help in Placements and interviews
